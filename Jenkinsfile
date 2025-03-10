@@ -15,24 +15,9 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests...'
-                    sh './hello_exec'  
+                    sh 'cd /var/jenkins_home/workspace/PES2UG22CS612-1/main/ && ./hello_exec'  
                 }
             }
         }
 
-        stage('Deploy') {
-            steps {
-                script {
-                    echo 'Deploying the project...'
-                    sh 'cp output /deploy/path/'  
-                }
-            }
-        }
-    }
-
-    post {
-        failure {
-            echo 'Pipeline failed'
-        }
-    }
-}
+       
